@@ -38,12 +38,6 @@ class SQLiteDatabase(val context: Context) : SQLiteOpenHelper(context, DB_NAME, 
         Toast.makeText(context, "User ${info.name} has been added.", Toast.LENGTH_SHORT).show()
     }
 
-    fun clearAllData() {
-        val db = readableDatabase
-        db.delete(TABLE_NAME, null, null)
-        db.close()
-    }
-
     fun loginValidation(userInfo: LoginData): Boolean {
         val db = readableDatabase
         val selectQuery =
